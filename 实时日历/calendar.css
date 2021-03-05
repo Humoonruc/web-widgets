@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    /* 规定容器元素的最终尺寸计算方式：直接设定盒子的毛宽高而非内容宽高。 */
+}
+
+ul {
+    list-style-type: none;
+    /* 列表项前面没有小圆点 */
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.month {
+    padding: 70px 25px;
+    /* 设置上下和左右的留白距离  */
+    width: 100%;
+    background: #1abc9c;
+}
+
+.month ul {
+    margin: 0;
+    /* 一般有默认padding和margin，所以要设置为0取消掉。 */
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* 全大写 */
+    letter-spacing: 3px;
+}
+
+span#year {
+    font-size: 18px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    /*使其在一行内排列*/
+    width: 13.6%;
+    /*未占满一行的话，由ul.weekdays的样式补足*/
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+
+/* 媒体检查：添加不同尺寸屏幕的样式 */
+
+@media screen and (max-width: 720px) {
+    .weekdays li,
+    .days li {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li,
+    .days li {
+        width: 12.5%;
+    }
+    .days li .active {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li,
+    .days li {
+        width: 12.2%;
+    }
+}

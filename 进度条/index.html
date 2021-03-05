@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>进度条</title>
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+        
+        #myBar {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript 百分比进度条</h1>
+
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+    <p id="number">0.0%</p>
+    <br>
+    <button onclick="move()">点我</button>
+
+    <script>
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 0;
+            var id = setInterval(frame, 10);
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    elem.style.width = width + '%';
+                    document.getElementById("number").innerText = width.toFixed(1) + '%';
+                    width += 0.1;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
